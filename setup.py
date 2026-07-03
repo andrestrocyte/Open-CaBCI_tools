@@ -25,6 +25,6 @@ setup(
         'scikit-image',
         'seaborn',
     ],
-    long_description=Path('README.md').read_text(),
+    long_description=Path('README.md').read_text(encoding='utf-8'),
     long_description_content_type='text/markdown',
 )
