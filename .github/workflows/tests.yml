@@ -11,7 +11,11 @@ permissions:
 
 jobs:
   python-3-9:
-    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, windows-2022]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
 
     steps:
@@ -35,7 +39,7 @@ jobs:
           python -m pip check
 
       - name: Verify installed public API
-        working-directory: /tmp
+        working-directory: ${{ runner.temp }}
         run: python -c "from bmitools import Calcium; print(Calcium.__name__)"
 
       - name: Run unit and integration tests

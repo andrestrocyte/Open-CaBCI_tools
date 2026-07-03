@@ -61,6 +61,7 @@ These figures are examples from the bundled dataset, not cohort-level manuscript
 The demonstration was tested with:
 
 - Ubuntu 22.04.5 LTS, x86-64
+- Windows Server 2022 through GitHub Actions
 - Python 3.9.13
 - Standard desktop CPU; no GPU or non-standard hardware is required
 - 4 GB RAM or more
@@ -72,17 +73,41 @@ Exact tested dependency versions are recorded in `requirements.txt`.
 
 ## Installation
 
-Clone the repository and create an isolated environment:
+Clone the repository:
 
 ```bash
 git clone https://github.com/andrestrocyte/Open-CaBCI_tools.git
 cd Open-CaBCI_tools
+```
 
+### Linux or macOS
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
+
+### Windows PowerShell
+
+Install 64-bit Python 3.9 and Git for Windows, then run:
+
+```powershell
+py -3.9 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+If PowerShell blocks activation, allow scripts only for the current terminal and activate again:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
+
+From Windows Command Prompt, use `.venv\Scripts\activate.bat` instead.
 
 Installation normally takes 3–5 minutes on a recent desktop with a broadband connection.
 
@@ -143,7 +168,7 @@ To run only the fast unit tests:
 python -m pytest -q -m "not integration"
 ```
 
-GitHub Actions runs the complete suite on Ubuntu 22.04 with Python 3.9 for every push and pull request.
+GitHub Actions runs the complete suite on Ubuntu 22.04 and Windows Server 2022 with Python 3.9 for every push and pull request.
 
 ---
 
