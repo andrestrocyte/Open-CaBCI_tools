@@ -6,7 +6,7 @@ setup(
     name='bmitools',
     version='0.1.9',
     description='Analysis tools for calcium-based brain-computer interface experiments',
-    url='https://github.com/donatolab/Open-CaBCI_tools',
+    url='https://github.com/andrestrocyte/Open-CaBCI_tools',
     license='GPL-3.0-only',
     python_requires='>=3.9',
     packages=find_packages(),

@@ -73,7 +73,7 @@ Exact tested dependency versions are recorded in `requirements.txt`.
 Clone the repository and create an isolated environment:
 
 ```bash
-git clone https://github.com/donatolab/Open-CaBCI_tools.git
+git clone https://github.com/andrestrocyte/Open-CaBCI_tools.git
 cd Open-CaBCI_tools
 
 python3 -m venv .venv
